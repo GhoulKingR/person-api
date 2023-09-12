@@ -1,5 +1,6 @@
 from flask import Flask, request
 from bson.objectid import ObjectId
+from flask_cors import cross_origin
 
 from lib import initcol, nameindb, isvalid
 
@@ -8,6 +9,7 @@ app = Flask(__name__)
 
 
 @app.post("/api")
+@cross_origin()
 def create():
     if request.headers.get("Content-Type") != "application/json":
         return ({"message": "Content-Type not supported!"}, 400)
@@ -31,6 +33,7 @@ def create():
 
 
 @app.get("/api")
+@cross_origin()
 def all():
     col = initcol()
     result = []
@@ -41,6 +44,7 @@ def all():
 
 
 @app.get("/api/<userid>")
+@cross_origin()
 def read(userid):
     col = initcol()
     docs = col.find({"_id": ObjectId(userid)})
@@ -51,6 +55,7 @@ def read(userid):
 
 
 @app.put("/api/<userid>")
+@cross_origin()
 def change(userid):
     if request.headers.get("Content-Type") != "application/json":
         return ({"message": "Content-Type not supported!"}, 400)

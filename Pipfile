@@ -8,6 +8,7 @@ flask = "*"
 pandas = "*"
 pymongo = "*"
 gunicorn = "*"
+flask-cors = "*"
 
 [dev-packages]
 ipykernel = "*"
