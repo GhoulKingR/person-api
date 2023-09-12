@@ -85,7 +85,7 @@ def delete(userid):
     docs = col.find({"_id": id})
     for doc in docs:
         col.delete_one({"_id": id})
-        return ({"_id": str(doc["_id"]), "name": doc["name"]}, 200)
+        return ({"id": str(doc["_id"]), "name": doc["name"]}, 200)
 
     return ({"message": f"No user with this id: {userid}"}, 400)
 
