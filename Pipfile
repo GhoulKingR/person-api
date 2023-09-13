@@ -9,6 +9,7 @@ pandas = "*"
 pymongo = "*"
 gunicorn = "*"
 flask-cors = "*"
+python-dotenv = "*"
 
 [dev-packages]
 ipykernel = "*"

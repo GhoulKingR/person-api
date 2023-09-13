@@ -1,12 +1,11 @@
 from pymongo import MongoClient
+import os
 import re
 
 
 def initcol():
-    username = "guest"
-    password = "D1CQpxQT9FblcMGj"
-    url = "mongodb+srv://{}:{}@cluster0.ag9ir.mongodb.net/?retryWrites=true&w=majority"
-    myclient = MongoClient(url.format(username, password))
+    url = os.getenv("MONGO_SERVER")
+    myclient = MongoClient(url)
     dbname = "persons"
     mydb = myclient[dbname]
     return mydb["persons"]

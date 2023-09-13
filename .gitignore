@@ -2,3 +2,4 @@
 .vscode/
 dev/
 *.outline.md
+.env

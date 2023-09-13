@@ -1,6 +1,7 @@
 from flask import Flask, request
 from bson.objectid import ObjectId
 from flask_cors import cross_origin
+from dotenv import load_dotenv
 
 from lib import initcol, isvalid
 
@@ -93,4 +94,5 @@ def delete(userid):
 
 
 if __name__ == "__main__":
+    load_dotenv()
     app.run(debug=True)

@@ -4,17 +4,25 @@ Currently this API is hosted publicly in this domain: https://person-api-uied.on
 
 ## Running this project locally
 
-To run this application, you'll need to have [Pipenv](https://pipenv.pypa.io/en/latest/installation/) installed on your machine.
+To run this application, you'll need to have [Pipenv](https://pipenv.pypa.io/en/latest/installation/) installed on your machine, and a [MongoDB](https://www.mongodb.com/docs/manual/tutorial/getting-started/) [connection string](https://www.mongodb.com/docs/drivers/node/current/quick-start/create-a-connection-string/) to your database.
 
-Once you have it installed, running the project is a simple 2-step process:
+Once you have everything ready, follow these steps to get this application running:
 
-1. Set up its virtual environment on your system with this command:
+First, create a `.env` file in the root of this project.
+
+Next, save your MongoDB connection string to `MONGO_SERVER` in the `.env` file:
+
+```env
+MONGO_SERVER="mongodb+srv://connection.string/to?mongodb=database"
+```
+
+Then, set up this project's virtual environment on your system with this command:
 
 ```bash
 pipenv shell
 ```
 
-2. Run the app with this command:
+Finally, run the app with this command:
 
 ```bash
 python main.py
