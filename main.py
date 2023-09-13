@@ -2,7 +2,7 @@ from flask import Flask, request
 from bson.objectid import ObjectId
 from flask_cors import cross_origin
 
-from lib import initcol, nameindb, isvalid
+from lib import initcol, isvalid
 
 
 app = Flask(__name__)
@@ -22,9 +22,6 @@ def create():
             {"message": "Invalid name. Name must only contain letters and spaces"},
             400,
         )
-
-    if nameindb(name):
-        return ({"message": "Name already exists"}, 400)
 
     col = initcol()
     person = col.insert_one({"name": name})

@@ -2,14 +2,6 @@ from pymongo import MongoClient
 import re
 
 
-def nameindb(name):
-    col = initcol()
-    doc = col.find({"name": name})
-    for _ in doc:
-        return True
-    return False
-
-
 def initcol():
     username = "guest"
     password = "D1CQpxQT9FblcMGj"
