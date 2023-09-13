@@ -32,4 +32,4 @@ Python will host the application in `http://127.0.0.1:5000` by default.
 
 ## What next?
 
-You can take a look into the [DOCUMENTATION.md](/DOCUMENTATION.md) file to understand that endpoints that this API provides and how they work.
+You can take a look into the [DOCUMENTATION.md](/DOCUMENTATION.md) file to understand that endpoints that this API provides and how they work. You can also take a look at the [UML Diagram](/UML%20Diagram.png) of this application.
